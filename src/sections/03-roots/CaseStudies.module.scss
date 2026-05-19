@@ -1,0 +1,102 @@
+.section {
+  @include flex-col;
+  gap: $space-5;
+}
+
+// ── HEAD ───────────────────────────────────────────────────────
+.head { @include flex-col; gap: $space-3; }
+
+.eyebrow { @include eyebrow; }
+.title   { @include headline-section; font-weight: $weight-light; }
+
+.lede {
+  @include lede;
+  max-width: $content-narrow;
+
+  em {
+    @include accent-underline;
+    font-style: normal;
+  }
+}
+
+// ── GRID ───────────────────────────────────────────────────────
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-5;
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.case {
+  @include flex-col;
+  gap: $space-3;
+  padding: $space-5;
+  background: $bg-surface;
+  border: $border-hair;
+  border-radius: $radius-md;
+}
+
+.caseHead {
+  @include flex-between;
+  align-items: baseline;
+  padding-bottom: $space-2;
+  border-bottom: $border-subtle;
+}
+
+.brand {
+  font-family: $font-display;
+  font-size: $text-lg;
+  font-weight: $weight-regular;
+  color: $ink;
+}
+
+.year {
+  font-family: $font-mono;
+  font-size: 11px;
+  color: $ink-faint;
+  letter-spacing: 0.04em;
+}
+
+.domain {
+  @include eyebrow;
+  color: $accent;
+  margin-bottom: $space-2;
+}
+
+// ── ROWS ───────────────────────────────────────────────────────
+.row {
+  @include flex-col;
+  gap: 2px;
+  padding: $space-2 0;
+}
+
+.rowLabel {
+  @include eyebrow;
+  color: $ink-soft;
+}
+
+.rowBody {
+  @include body-paragraph;
+  font-size: $text-sm;
+}
+
+.rowImpact {
+  @include body-paragraph;
+  font-size: $text-sm;
+  color: $ink;
+  font-weight: $weight-medium;
+}
+
+.source {
+  @include eyebrow;
+  margin-top: $space-2;
+  padding-top: $space-2;
+  border-top: $border-subtle;
+  color: $ink-faint;
+  font-size: 10px;
+  text-transform: none;
+  letter-spacing: 0.04em;
+}

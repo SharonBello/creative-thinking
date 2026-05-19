@@ -1,0 +1,165 @@
+.section {
+  @include flex-col;
+  gap: $space-5;
+  padding: $space-6;
+  background: $bg-surface;
+  border: $border-hair;
+  border-radius: $radius-md;
+}
+
+// ── PHASE TABS ─────────────────────────────────────────────────
+.phaseTabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-bottom: $border-subtle;
+}
+
+.tab {
+  @include focus-ring;
+  display: flex;
+  align-items: baseline;
+  gap: $space-2;
+  padding: $space-3 $space-4;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  color: $ink-soft;
+  transition: color $dur-fast $ease-out;
+  text-align: start;
+
+  &:hover:not(:disabled) { color: $ink-mid; }
+  &:disabled { opacity: 0.4; cursor: not-allowed; }
+}
+
+.tabNum {
+  font-family: $font-mono;
+  font-size: 11px;
+  color: $ink-faint;
+  letter-spacing: 0.04em;
+}
+
+.tabLabel {
+  font-family: $font-body;
+  font-size: $text-sm;
+  font-weight: $weight-regular;
+}
+
+.tabActive {
+  color: $ink !important;
+  border-bottom-color: $accent !important;
+
+  .tabNum { color: $accent; }
+  .tabLabel { font-weight: $weight-medium; }
+}
+
+// ── PHASE BODY ─────────────────────────────────────────────────
+.phase {
+  @include flex-col;
+  gap: $space-4;
+}
+
+.phaseTitle {
+  @include headline-subsection;
+
+  em {
+    @include accent-underline;
+    font-style: normal;
+    font-weight: $weight-regular;
+  }
+}
+
+.phaseHint {
+  @include body-paragraph;
+
+  strong { font-weight: $weight-medium; color: $accent; }
+}
+
+// ── INPUTS ─────────────────────────────────────────────────────
+.textarea {
+  @include field-base;
+  resize: vertical;
+  min-height: 120px;
+  line-height: $leading-loose;
+}
+
+.input { @include field-base; }
+
+// ── ASSOC CHIPS ────────────────────────────────────────────────
+.assocList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+  padding: $space-3 0;
+  border-top: $border-subtle;
+  border-bottom: $border-subtle;
+}
+
+.assocChip {
+  @include focus-ring;
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid $line-strong;
+  border-radius: $radius-pill;
+  font-family: $font-body;
+  font-size: $text-sm;
+  color: $ink-mid;
+  cursor: pointer;
+  transition: all $dur-fast $ease-out;
+
+  &:hover { border-color: $ink; color: $ink; }
+}
+
+.assocChipActive {
+  background: $accent !important;
+  border-color: $accent !important;
+  color: $bg-canvas !important;
+}
+
+// ── FOOTER ─────────────────────────────────────────────────────
+.phaseFooter {
+  @include flex-between;
+  gap: $space-3;
+  padding-top: $space-3;
+  border-top: $border-subtle;
+}
+
+.counter {
+  font-family: $font-mono;
+  font-size: $text-md;
+  color: $ink;
+
+  em {
+    color: $ink-faint;
+    font-style: normal;
+    font-size: $text-sm;
+  }
+}
+
+.next {
+  @include btn-primary;
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+
+  svg { font-size: 16px; }
+}
+
+.back {
+  @include btn-link;
+}
+
+.done {
+  font-family: $font-body;
+  font-size: $text-sm;
+  color: $success;
+  font-style: italic;
+}
+
+.gateHint {
+  @include body-paragraph;
+  font-size: $text-sm;
+  color: $ink-soft;
+  font-style: italic;
+}

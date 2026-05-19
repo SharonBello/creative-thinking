@@ -1,0 +1,91 @@
+.section {
+  @include flex-col;
+  gap: $space-5;
+  margin-top: $space-3;
+}
+
+.eyebrow { @include eyebrow; }
+.title   { @include headline-section; font-weight: $weight-light; }
+
+// ── FLOW ───────────────────────────────────────────────────────
+.flow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-3;
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+    gap: $space-4;
+  }
+}
+
+.stage {
+  @include flex-col;
+  gap: $space-3;
+  padding: $space-4;
+  background: $bg-surface;
+  border: $border-hair;
+  border-radius: $radius-md;
+  position: relative;
+}
+
+.stageHead {
+  display: flex;
+  align-items: baseline;
+  gap: $space-2;
+}
+
+.num {
+  font-family: $font-mono;
+  font-size: $text-sm;
+  color: $accent;
+  letter-spacing: 0.02em;
+}
+
+.stageTitle {
+  font-family: $font-display;
+  font-size: $text-md;
+  font-weight: $weight-regular;
+  color: $ink;
+}
+
+.stageBody {
+  @include body-paragraph;
+  font-size: $text-sm;
+}
+
+// Arrow between stages
+.arrow {
+  position: absolute;
+  left: -14px;   // RTL: points to the next stage (which sits on the left)
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: $font-mono;
+  color: $accent;
+  font-size: 18px;
+  pointer-events: none;
+
+  @media (max-width: $bp-md) {
+    left: 50%;
+    top: auto;
+    bottom: -22px;
+    transform: translateX(-50%) rotate(-90deg);
+  }
+}
+
+// ── CODA ───────────────────────────────────────────────────────
+.coda {
+  @include body-paragraph;
+  padding: $space-4 $space-5;
+  background: $accent-faint;
+  border-radius: $radius-md;
+  color: $ink;
+
+  strong {
+    font-weight: $weight-medium;
+    color: $accent-deep;
+  }
+}

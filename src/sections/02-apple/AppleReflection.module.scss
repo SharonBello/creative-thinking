@@ -1,0 +1,82 @@
+.section {
+  @include flex-col;
+  gap: $space-5;
+}
+
+.eyebrow { @include eyebrow; }
+
+.title {
+  @include headline-section;
+  font-weight: $weight-light;
+}
+
+// ── TWO COLUMNS ────────────────────────────────────────────────
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-7;
+  padding: $space-5 0;
+  border-top: $border-subtle;
+  border-bottom: $border-subtle;
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+    gap: $space-5;
+  }
+}
+
+.col { @include flex-col; gap: $space-2; }
+
+.colTitle {
+  display: flex;
+  align-items: baseline;
+  gap: $space-2;
+  font-family: $font-display;
+  font-size: $text-xl;
+  font-weight: $weight-regular;
+  color: $ink;
+}
+
+.colNum {
+  font-family: $font-mono;
+  font-size: $text-base;
+  color: $accent;
+  letter-spacing: 0.02em;
+}
+
+.colSub {
+  @include eyebrow;
+  margin-bottom: $space-2;
+}
+
+.colBody {
+  @include body-paragraph;
+
+  em {
+    @include accent-underline;
+    font-style: normal;
+  }
+}
+
+// ── TAKEAWAY ───────────────────────────────────────────────────
+.takeaway {
+  @include flex-col;
+  gap: $space-3;
+  padding: $space-5;
+  background: $accent-faint;
+  border-radius: $radius-md;
+
+  p {
+    @include body-paragraph;
+    color: $ink;
+  }
+
+  strong {
+    color: $accent-deep;
+    font-weight: $weight-medium;
+  }
+}
+
+.rule {
+  @include micro-rule(40px);
+}

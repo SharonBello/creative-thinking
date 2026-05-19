@@ -1,0 +1,19 @@
+.section { @include flex-col; gap: $space-3; }
+
+.eyebrow { @include eyebrow; }
+.title   { @include headline-subsection; font-weight: $weight-regular; }
+
+.textarea {
+  @include field-base;
+  resize: vertical;
+  min-height: 240px;
+  line-height: $leading-loose;
+  font-family: $font-body;
+}
+
+.tip {
+  @include body-paragraph;
+  font-size: $text-sm;
+  color: $ink-soft;
+  font-style: italic;
+}

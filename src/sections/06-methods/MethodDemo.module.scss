@@ -1,0 +1,141 @@
+.demo {
+  @include flex-col;
+  gap: $space-5;
+  padding: $space-6;
+  background: $bg-surface;
+  border: $border-hair;
+  border-radius: $radius-md;
+}
+
+// ── HEAD ───────────────────────────────────────────────────────
+.head {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: $space-4;
+  align-items: baseline;
+  padding-bottom: $space-4;
+  border-bottom: $border-subtle;
+}
+
+.num {
+  font-family: $font-display;
+  font-size: $text-3xl;
+  font-weight: $weight-light;
+  color: $accent;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+.headBody { @include flex-col; gap: $space-1; min-width: 0; }
+
+.name {
+  font-family: $font-display;
+  font-size: $text-xl;
+  font-weight: $weight-regular;
+  color: $ink;
+}
+
+.tagline {
+  @include body-paragraph;
+  font-size: $text-sm;
+  color: $ink-mid;
+  font-style: italic;
+}
+
+// ── WHEN BOX ───────────────────────────────────────────────────
+.whenBox {
+  @include flex-col;
+  gap: $space-1;
+  padding: $space-3 $space-4;
+  background: $accent-faint;
+  border-radius: $radius-sm;
+}
+
+.whenLabel { @include eyebrow; color: $accent; }
+.whenBody  { @include body-paragraph; font-size: $text-sm; }
+
+// ── BEAT ───────────────────────────────────────────────────────
+.beat { @include flex-col; gap: $space-3; }
+
+.beatTag {
+  @include eyebrow;
+  color: $ink-soft;
+}
+
+.challenge {
+  @include body-paragraph;
+  font-family: $font-display;
+  font-weight: $weight-light;
+  font-size: $text-md;
+  color: $ink;
+  font-style: italic;
+  padding-inline-start: $space-4;
+  border-inline-start: 2px solid $accent;
+}
+
+.context {
+  font-family: $font-mono;
+  font-size: 11px;
+  color: $ink-soft;
+  letter-spacing: 0.04em;
+}
+
+// ── OUTPUTS ────────────────────────────────────────────────────
+.outputs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @include flex-col;
+  gap: $space-3;
+}
+
+.output {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: $space-4;
+  padding: $space-3 0;
+  border-bottom: $border-subtle;
+
+  &:last-child { border-bottom: none; }
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+    gap: $space-1;
+  }
+}
+
+.outputLabel {
+  font-family: $font-mono;
+  font-size: $text-xs;
+  font-weight: $weight-medium;
+  color: $accent;
+  letter-spacing: 0.02em;
+  padding-top: 4px;
+}
+
+.outputValue {
+  @include body-paragraph;
+  font-size: $text-sm;
+}
+
+// ── REFLECTION ─────────────────────────────────────────────────
+.reflection {
+  @include flex-col;
+  gap: $space-2;
+  padding: $space-4 $space-5;
+  background: $bg-subtle;
+  border-radius: $radius-sm;
+  border-inline-start: 2px solid $ink-faint;
+
+  p {
+    @include body-paragraph;
+    font-size: $text-sm;
+    color: $ink;
+    font-style: italic;
+  }
+}
+
+.reflectionLabel {
+  @include eyebrow;
+  color: $ink-soft;
+}

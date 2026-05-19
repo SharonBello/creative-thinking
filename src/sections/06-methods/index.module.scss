@@ -1,0 +1,4 @@
+.demos {
+  @include flex-col;
+  gap: $space-8;
+}

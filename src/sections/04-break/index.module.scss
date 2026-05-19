@@ -1,0 +1,33 @@
+.breakBanner {
+  @include flex-col;
+  gap: $space-3;
+  padding: $space-7 $space-5;
+  background: $bg-subtle;
+  border-radius: $radius-md;
+  text-align: center;
+}
+
+.eyebrow {
+  @include eyebrow;
+  color: $accent;
+}
+
+.bannerTitle {
+  @include headline-section;
+  font-weight: $weight-light;
+}
+
+.bannerBody {
+  @include body-paragraph;
+  max-width: $content-narrow;
+  margin: 0 auto;
+}
+
+.gateHint {
+  @include body-paragraph;
+  font-size: $text-sm;
+  color: $ink-soft;
+  font-style: italic;
+  text-align: center;
+  margin-top: $space-3;
+}

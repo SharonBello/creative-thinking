@@ -1,0 +1,20 @@
+.section { @include flex-col; gap: $space-3; }
+
+.eyebrow { @include eyebrow; }
+
+.title {
+  @include headline-subsection;
+  font-weight: $weight-regular;
+
+  em {
+    @include accent-underline;
+    font-style: normal;
+    font-weight: $weight-regular;
+  }
+}
+
+.note {
+  @include body-paragraph;
+  font-size: $text-sm;
+  color: $ink-mid;
+}

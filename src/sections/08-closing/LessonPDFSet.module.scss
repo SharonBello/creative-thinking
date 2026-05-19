@@ -1,0 +1,159 @@
+.section {
+  @include flex-col;
+  gap: $space-3;
+  margin-top: $space-5;
+}
+
+.eyebrow { @include eyebrow; }
+.title   { @include headline-section; font-weight: $weight-light; }
+
+.note {
+  @include body-paragraph;
+  font-size: $text-sm;
+
+  strong {
+    font-weight: $weight-medium;
+    color: $ink;
+  }
+}
+
+// ── GRID ───────────────────────────────────────────────────────
+.grid {
+  list-style: none;
+  margin: $space-3 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-3;
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  @include flex-col;
+  gap: $space-2;
+  padding: $space-4 $space-5;
+  background: $bg-surface;
+  border: $border-hair;
+  border-radius: $radius-md;
+}
+
+.cardTitle {
+  font-family: $font-display;
+  font-size: $text-md;
+  font-weight: $weight-medium;
+  color: $ink;
+}
+
+.cardMeta {
+  font-family: $font-mono;
+  font-size: 11px;
+  color: $ink-soft;
+  letter-spacing: 0.04em;
+}
+
+.btn {
+  @include btn-secondary;
+  align-self: start;
+  margin-top: $space-2;
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+
+  svg { font-size: 14px; }
+}
+
+.cardEmpty {
+  background: $bg-subtle;
+  border-style: dashed;
+}
+
+.cardTitleEmpty {
+  font-family: $font-display;
+  font-size: $text-md;
+  font-weight: $weight-regular;
+  color: $ink-soft;
+}
+
+.cardMetaEmpty {
+  @include body-paragraph;
+  font-size: $text-sm;
+  color: $ink-soft;
+  font-style: italic;
+}
+
+// ── PRINT PAGE LAYOUT (only visible during print) ──────────────
+.printPage {
+  font-family: $font-body;
+  color: $ink;
+  padding: 16mm 14mm;
+  background: white;
+}
+
+.printHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 6pt;
+  margin-bottom: 18pt;
+  padding-bottom: 10pt;
+  border-bottom: 1pt solid $line-strong;
+}
+
+.printTag {
+  font-family: $font-mono;
+  font-size: 9pt;
+  color: $accent;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.printTitle {
+  font-family: $font-display;
+  font-size: 22pt;
+  font-weight: 400;
+  color: $ink;
+  line-height: 1.2;
+}
+
+.printMeta {
+  font-family: $font-mono;
+  font-size: 9pt;
+  color: $ink-soft;
+  letter-spacing: 0.04em;
+}
+
+.printNotes {
+  margin-top: 18pt;
+  padding-top: 12pt;
+  border-top: 1pt solid $line-strong;
+}
+
+.printNotesTitle {
+  font-family: $font-display;
+  font-size: 13pt;
+  font-weight: 500;
+  color: $ink;
+  margin-bottom: 8pt;
+}
+
+.printNotesBody {
+  font-family: $font-body;
+  font-size: 10pt;
+  line-height: 1.7;
+  color: $ink-mid;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.printFooter {
+  margin-top: 24pt;
+  padding-top: 8pt;
+  border-top: 1pt solid $line;
+  font-family: $font-mono;
+  font-size: 8pt;
+  color: $ink-faint;
+  letter-spacing: 0.04em;
+  text-align: center;
+}

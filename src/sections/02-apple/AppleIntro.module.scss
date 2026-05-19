@@ -1,0 +1,49 @@
+.section {
+  @include flex-col;
+  gap: $space-3;
+}
+
+.eyebrow {
+  @include eyebrow;
+}
+
+.title {
+  @include headline-section;
+  font-weight: $weight-light;
+}
+
+.lede {
+  @include lede;
+  max-width: $content-narrow;
+
+  em {
+    @include accent-underline;
+    font-style: normal;
+  }
+}
+
+.steps {
+  list-style: none;
+  margin: $space-4 0 0;
+  padding: 0;
+  @include flex-col;
+  gap: $space-3;
+  counter-reset: appleStep;
+
+  li {
+    font-family: $font-body;
+    font-size: $text-base;
+    color: $ink-mid;
+    padding-inline-start: $space-5;
+    position: relative;
+    line-height: $leading-loose;
+
+    span {
+      display: inline-block;
+      min-width: 64px;
+      @include eyebrow;
+      color: $accent;
+      margin-inline-end: $space-2;
+    }
+  }
+}

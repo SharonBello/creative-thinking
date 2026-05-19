@@ -1,0 +1,60 @@
+.section { @include flex-col; gap: $space-3; }
+
+.eyebrow { @include eyebrow; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-3;
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  @include focus-ring;
+  @include flex-col;
+  gap: $space-2;
+  padding: $space-4 $space-5;
+  background: $bg-surface;
+  border: $border-hair;
+  border-radius: $radius-md;
+  text-align: start;
+  cursor: pointer;
+  transition: all $dur-fast $ease-out;
+
+  &:hover {
+    border-color: $ink-mid;
+  }
+}
+
+.cardActive {
+  background: $ink !important;
+  border-color: $ink !important;
+
+  .name    { color: $bg-canvas; }
+  .tagline { color: rgba(252, 251, 248, 0.85); }
+  .when    { color: rgba(252, 251, 248, 0.65); }
+}
+
+.name {
+  font-family: $font-display;
+  font-size: $text-md;
+  font-weight: $weight-medium;
+  color: $ink;
+}
+
+.tagline {
+  font-family: $font-body;
+  font-size: $text-sm;
+  color: $ink-mid;
+  font-style: italic;
+}
+
+.when {
+  @include body-paragraph;
+  font-size: $text-xs;
+  color: $ink-soft;
+  margin-top: $space-1;
+}

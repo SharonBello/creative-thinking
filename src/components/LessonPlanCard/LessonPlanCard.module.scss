@@ -1,0 +1,98 @@
+.card {
+  @include flex-col;
+  gap: $space-4;
+  padding: $space-5;
+  background: $bg-surface;
+  border: $border-hair;
+  border-radius: $radius-md;
+}
+
+// Print variant — flatter, lighter, no border
+.cardPrint {
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+// ── HEAD ───────────────────────────────────────────────────────
+.head {
+  @include flex-col;
+  gap: $space-2;
+  padding-bottom: $space-3;
+  border-bottom: $border-subtle;
+}
+
+.title {
+  @include headline-subsection;
+  font-weight: $weight-regular;
+}
+
+.meta {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  flex-wrap: wrap;
+  font-family: $font-mono;
+  font-size: 11px;
+  color: $ink-soft;
+  letter-spacing: 0.04em;
+
+  span:not(.totalTime) { line-height: 1; }
+}
+
+.totalTime {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-inline-start: auto;
+  color: $accent;
+
+  svg { font-size: 12px; }
+}
+
+// ── BLOCKS ─────────────────────────────────────────────────────
+.blocks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @include flex-col;
+  gap: $space-4;
+}
+
+.block {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: $space-4;
+  align-items: baseline;
+}
+
+.duration {
+  font-family: $font-mono;
+  font-size: $text-sm;
+  font-weight: $weight-medium;
+  color: $accent;
+  text-align: end;
+  padding-top: 3px;
+
+  &::after {
+    content: '׳';
+    margin-inline-start: 2px;
+    color: $ink-faint;
+    font-weight: $weight-regular;
+  }
+}
+
+.body { @include flex-col; gap: $space-1; min-width: 0; }
+
+.blockTitle {
+  font-family: $font-body;
+  font-size: $text-base;
+  font-weight: $weight-medium;
+  color: $ink;
+  line-height: $leading-tight;
+}
+
+.blockDesc {
+  @include body-paragraph;
+  font-size: $text-sm;
+}

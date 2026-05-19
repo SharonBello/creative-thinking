@@ -1,0 +1,83 @@
+.form {
+  @include flex-col;
+  gap: $space-5;
+  padding: $space-6;
+  background: $bg-surface;
+  border: $border-hair;
+  border-radius: $radius-md;
+}
+
+.head { @include flex-col; gap: $space-2; }
+
+.eyebrow { @include eyebrow; }
+.title   { @include headline-subsection; font-weight: $weight-regular; }
+
+// ── FIELDS ─────────────────────────────────────────────────────
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-4 $space-5;
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  @include flex-col;
+  gap: $space-1;
+}
+
+.fieldWide { grid-column: 1 / -1; }
+
+.label {
+  @include eyebrow;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: $text-xs;
+  color: $ink-mid;
+
+  em {
+    color: $accent;
+    font-style: normal;
+    font-weight: $weight-medium;
+  }
+}
+
+.optional {
+  color: $ink-faint;
+  font-size: 10px;
+  font-weight: $weight-light;
+}
+
+.input    { @include field-base; }
+.textarea { @include field-base; resize: vertical; line-height: $leading-loose; }
+
+// ── TIERS ──────────────────────────────────────────────────────
+.tiers {
+  display: flex;
+  gap: $space-2;
+  flex-wrap: wrap;
+  margin-top: $space-1;
+}
+
+.tier {
+  @include focus-ring;
+  padding: 8px 14px;
+  background: transparent;
+  border: 1px solid $line-strong;
+  border-radius: $radius-pill;
+  font-family: $font-body;
+  font-size: $text-sm;
+  color: $ink-mid;
+  cursor: pointer;
+  transition: all $dur-fast $ease-out;
+
+  &:hover { border-color: $ink; color: $ink; }
+}
+
+.tierActive {
+  background: $ink !important;
+  border-color: $ink !important;
+  color: $bg-canvas !important;
+}

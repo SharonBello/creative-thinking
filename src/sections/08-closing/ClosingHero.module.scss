@@ -1,0 +1,50 @@
+.section { @include flex-col; gap: $space-3; }
+
+.eyebrow { @include eyebrow; }
+.title   { @include headline-section; font-weight: $weight-light; }
+
+.lede {
+  @include lede;
+  max-width: $content-narrow;
+
+  em {
+    @include accent-underline;
+    font-style: normal;
+  }
+}
+
+// ── STATS ──────────────────────────────────────────────────────
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-3;
+  margin: $space-4 0 0;
+  padding: $space-5 0;
+  border-top: $border-subtle;
+  border-bottom: $border-subtle;
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+    gap: $space-4;
+  }
+}
+
+.stat {
+  @include flex-col;
+  gap: $space-1;
+  align-items: start;
+}
+
+.statValue {
+  font-family: $font-display;
+  font-size: $text-4xl;
+  font-weight: $weight-light;
+  color: $accent;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  @include eyebrow;
+  color: $ink-soft;
+}

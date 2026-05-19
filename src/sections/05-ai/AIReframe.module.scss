@@ -1,0 +1,86 @@
+.section {
+  @include flex-col;
+  gap: $space-5;
+}
+
+.head { @include flex-col; gap: $space-3; }
+
+.eyebrow { @include eyebrow; }
+
+.title {
+  @include headline-section;
+  font-weight: $weight-light;
+
+  em {
+    @include accent-underline;
+    font-style: normal;
+  }
+}
+
+.lede {
+  @include lede;
+  max-width: $content-narrow;
+
+  em { color: $ink; font-style: italic; }
+}
+
+// ── SPLIT ──────────────────────────────────────────────────────
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: $space-6;
+  padding: $space-5 0;
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+    gap: $space-5;
+  }
+}
+
+.col { @include flex-col; gap: $space-3; }
+
+.colTag {
+  @include eyebrow;
+  color: $ink-soft;
+}
+
+.colTagAccent { color: $accent; }
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @include flex-col;
+  gap: $space-2;
+
+  li {
+    @include body-paragraph;
+    padding: 6px 0;
+    border-bottom: $border-subtle;
+
+    &:last-child { border-bottom: none; }
+  }
+}
+
+.colCoda {
+  @include body-paragraph;
+  font-size: $text-sm;
+  margin-top: $space-3;
+  padding-top: $space-3;
+  border-top: $border-subtle;
+  color: $ink;
+  font-style: italic;
+
+  strong {
+    font-weight: $weight-medium;
+    color: $accent-deep;
+    font-style: normal;
+  }
+}
+
+.divider {
+  background: $line;
+  width: 1px;
+
+  @media (max-width: $bp-md) { display: none; }
+}

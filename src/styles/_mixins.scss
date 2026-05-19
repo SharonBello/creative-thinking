@@ -137,7 +137,7 @@
   cursor: pointer;
   transition: background $dur-fast $ease-out;
 
-  &:hover:not(:disabled) { background: lighten($ink, 6%); }
+  &:hover:not(:disabled) { background: $bg-deep; }
   &:disabled { opacity: 0.4; cursor: not-allowed; }
 }
 

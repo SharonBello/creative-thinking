@@ -1,0 +1,35 @@
+.section { @include flex-col; gap: $space-3; }
+
+.eyebrow { @include eyebrow; }
+.title   { @include headline-section; font-weight: $weight-light; }
+
+.lede {
+  @include lede;
+  max-width: $content-narrow;
+
+  em {
+    @include accent-underline;
+    font-style: normal;
+  }
+}
+
+.previewList {
+  list-style: none;
+  margin: $space-3 0 0;
+  padding: 0;
+  @include flex-col;
+  gap: $space-2;
+
+  li {
+    @include body-paragraph;
+    padding: $space-2 0;
+    border-bottom: $border-subtle;
+
+    strong {
+      font-weight: $weight-medium;
+      color: $ink;
+    }
+
+    &:last-child { border-bottom: none; }
+  }
+}

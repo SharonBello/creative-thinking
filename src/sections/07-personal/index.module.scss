@@ -1,0 +1,13 @@
+.head     { @include flex-col; gap: $space-3; }
+.eyebrow  { @include eyebrow; }
+.title    { @include headline-section; font-weight: $weight-light; }
+.lede     { @include lede; max-width: $content-narrow; }
+
+.warn {
+  @include body-paragraph;
+  padding: $space-4 $space-5;
+  background: $accent-faint;
+  color: $accent-deep;
+  border-radius: $radius-md;
+  border-inline-start: 2px solid $accent;
+}

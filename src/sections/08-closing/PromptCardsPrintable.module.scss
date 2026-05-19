@@ -1,0 +1,140 @@
+.section {
+  @include flex-col;
+  gap: $space-3;
+  margin-top: $space-5;
+}
+
+.eyebrow { @include eyebrow; }
+.title   { @include headline-section; font-weight: $weight-light; }
+
+.note {
+  @include body-paragraph;
+  font-size: $text-sm;
+}
+
+.btn {
+  @include btn-primary;
+  align-self: start;
+  margin-top: $space-3;
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+
+  svg { font-size: 16px; }
+}
+
+// ── DECK PAGES (print only) ────────────────────────────────────
+.deck {
+  font-family: $font-body;
+  color: $ink;
+  background: white;
+}
+
+.card {
+  padding: 16mm 14mm;
+  background: white;
+  min-height: 100vh;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 8pt;
+  border-bottom: 1pt solid $line-strong;
+  margin-bottom: 14pt;
+}
+
+.cardNum {
+  font-family: $font-mono;
+  font-size: 11pt;
+  font-weight: 500;
+  color: $accent;
+  letter-spacing: 0.04em;
+}
+
+.cardKit {
+  font-family: $font-mono;
+  font-size: 8pt;
+  color: $ink-faint;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cardName {
+  font-family: $font-display;
+  font-size: 26pt;
+  font-weight: 400;
+  color: $ink;
+  line-height: 1.15;
+  margin-bottom: 4pt;
+}
+
+.cardTag {
+  font-family: $font-body;
+  font-size: 11pt;
+  font-style: italic;
+  color: $ink-mid;
+  margin-bottom: 12pt;
+}
+
+.cardWhen, .cardPrompt, .cardExample {
+  margin-bottom: 12pt;
+
+  h2 {
+    font-family: $font-mono;
+    font-size: 9pt;
+    font-weight: 500;
+    color: $accent;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4pt;
+  }
+
+  p {
+    font-family: $font-body;
+    font-size: 10pt;
+    line-height: 1.7;
+    color: $ink;
+    margin: 0;
+  }
+}
+
+.cardPrompt {
+  padding: 10pt 12pt;
+  background: #FBF8F1;
+  border-inline-start: 2pt solid $accent;
+  border-radius: 2pt;
+}
+
+.partRow {
+  display: grid;
+  grid-template-columns: 50pt 1fr;
+  gap: 8pt;
+  margin-bottom: 6pt;
+
+  &:last-child { margin-bottom: 0; }
+}
+
+.partLabel {
+  font-family: $font-mono;
+  font-size: 8pt;
+  font-weight: 500;
+  color: $accent;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-top: 2pt;
+}
+
+.cardExample p { font-style: italic; color: $ink-mid; }
+
+.cardFooter {
+  margin-top: 16pt;
+  padding-top: 6pt;
+  border-top: 1pt solid $line;
+  font-family: $font-mono;
+  font-size: 7pt;
+  color: $ink-faint;
+  letter-spacing: 0.04em;
+  text-align: center;
+}

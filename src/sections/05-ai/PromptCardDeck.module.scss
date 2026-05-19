@@ -1,0 +1,84 @@
+.section { @include flex-col; gap: $space-5; }
+
+.head    { @include flex-col; gap: $space-3; }
+.eyebrow { @include eyebrow; }
+.title   { @include headline-section; font-weight: $weight-light; }
+
+.lede {
+  @include lede;
+  max-width: $content-narrow;
+}
+
+// ── DECK LIST ──────────────────────────────────────────────────
+.deck {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @include flex-col;
+  gap: $space-3;
+}
+
+.deckItem {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: $space-4;
+  padding: $space-4 0;
+  border-bottom: $border-subtle;
+
+  &:last-child { border-bottom: none; }
+}
+
+.deckNum {
+  font-family: $font-mono;
+  font-size: $text-base;
+  font-weight: $weight-regular;
+  color: $accent;
+  letter-spacing: 0.02em;
+}
+
+.deckBody { @include flex-col; gap: $space-1; min-width: 0; }
+
+.deckName {
+  font-family: $font-display;
+  font-size: $text-md;
+  font-weight: $weight-medium;
+  color: $ink;
+  line-height: $leading-tight;
+}
+
+.deckTag {
+  @include body-paragraph;
+  font-size: $text-sm;
+  color: $ink;
+  font-style: italic;
+}
+
+.deckWhen {
+  @include body-paragraph;
+  font-size: $text-sm;
+  color: $ink-soft;
+  margin-top: $space-1;
+}
+
+// ── FULL CARD WRAPPER ──────────────────────────────────────────
+.full {
+  @include flex-col;
+  gap: $space-3;
+  margin-top: $space-4;
+  padding-top: $space-5;
+  border-top: $border-subtle;
+}
+
+.fullEyebrow {
+  @include eyebrow;
+  color: $accent;
+}
+
+// ── BRIDGE ─────────────────────────────────────────────────────
+.bridge {
+  @include body-paragraph;
+  font-style: italic;
+  margin-top: $space-3;
+  padding: $space-4 0;
+  border-top: $border-subtle;
+}

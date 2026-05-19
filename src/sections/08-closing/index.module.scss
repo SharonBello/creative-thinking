@@ -1,0 +1,82 @@
+.commit {
+  @include flex-col;
+  gap: $space-3;
+  margin-top: $space-5;
+  padding: $space-6;
+  background: $bg-deep;
+  color: $bg-canvas;
+  border-radius: $radius-md;
+}
+
+.eyebrow {
+  @include eyebrow;
+  color: $accent;
+}
+
+.title {
+  @include headline-section;
+  color: $bg-canvas;
+  font-weight: $weight-light;
+
+  em {
+    color: $accent;
+    font-style: normal;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+}
+
+.lede {
+  font-family: $font-body;
+  font-size: $text-md;
+  font-weight: $weight-light;
+  line-height: $leading-loose;
+  color: rgba(252, 251, 248, 0.75);
+  max-width: $content-narrow;
+}
+
+.textarea {
+  @include field-base;
+  resize: vertical;
+  min-height: 100px;
+  background: rgba(252, 251, 248, 0.05);
+  border-color: rgba(252, 251, 248, 0.18);
+  color: $bg-canvas;
+  line-height: $leading-loose;
+
+  &::placeholder { color: rgba(252, 251, 248, 0.4); }
+  &:focus {
+    border-color: $accent;
+    background: rgba(252, 251, 248, 0.08);
+  }
+}
+
+.completeBtn {
+  @include focus-ring;
+  align-self: start;
+  padding: 12px 32px;
+  background: $accent;
+  border: none;
+  border-radius: $radius-md;
+  color: $bg-canvas;
+  font-family: $font-body;
+  font-size: $text-base;
+  font-weight: $weight-medium;
+  cursor: pointer;
+  transition: background $dur-fast $ease-out;
+
+  &:hover:not(:disabled) { background: $accent-deep; }
+  &:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+}
+
+.thanks {
+  font-family: $font-body;
+  font-size: $text-sm;
+  color: rgba(252, 251, 248, 0.75);
+  font-style: italic;
+  margin-top: $space-2;
+}
