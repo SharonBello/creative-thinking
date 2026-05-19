@@ -1,0 +1,97 @@
+// ───────────────────────────────────────────────────────────────
+// Quiet Minimal progress bar
+// A thin row of section numbers + a hairline rule beneath the
+// active one. No pills, no badges, no colored chunks.
+// ───────────────────────────────────────────────────────────────
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(252, 251, 248, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: $border-subtle;
+  padding: $space-3 0;
+
+  @media print { display: none; }
+}
+
+.steps {
+  max-width: $content-wide;
+  margin: 0 auto;
+  padding: 0 $space-5;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: $space-1;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.stepItem { flex-shrink: 0; }
+
+.step {
+  @include focus-ring;
+  display: inline-flex;
+  align-items: baseline;
+  gap: $space-2;
+  padding: $space-2 $space-3;
+  background: transparent;
+  border: none;
+  border-radius: $radius-sm;
+  text-decoration: none;
+  color: $ink-soft;
+  font-family: $font-body;
+  font-size: $text-sm;
+  font-weight: $weight-regular;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color $dur-fast $ease-out;
+
+  &:hover:not(.stepLocked) {
+    color: $ink;
+  }
+}
+
+.stepNum {
+  font-family: $font-mono;
+  font-size: 11px;
+  color: $ink-faint;
+  letter-spacing: 0.04em;
+
+  svg { font-size: 12px; }
+}
+
+.stepLabel { line-height: 1; }
+
+// ── STATES ─────────────────────────────────────────────────────
+.stepCurrent {
+  color: $ink !important;
+  font-weight: $weight-medium;
+  position: relative;
+
+  .stepNum { color: $accent; }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset-inline: $space-3;
+    bottom: -$space-3;
+    height: 1px;
+    background: $accent;
+  }
+}
+
+.stepCompleted:not(.stepCurrent) {
+  color: $ink-mid;
+
+  .stepNum {
+    color: $success;
+    svg { font-size: 12px; }
+  }
+}
+
+.stepLocked {
+  opacity: 0.45;
+  cursor: not-allowed;
+}

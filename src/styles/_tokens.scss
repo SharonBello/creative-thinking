@@ -1,0 +1,99 @@
+// ═══════════════════════════════════════════════════════════════════
+// M05 · Quiet Minimal Design Tokens
+// Almost monochrome. Restrained. Typography-led.
+// One accent (terracotta) used sparingly. No pop colors.
+// ═══════════════════════════════════════════════════════════════════
+
+// ── PALETTE ────────────────────────────────────────────────────
+$bg-canvas:        #FCFBF8;
+$bg-surface:       #FFFFFF;
+$bg-subtle:        #F4F0E8;
+$bg-deep:          #2A2E3D;
+
+$ink:              #1A2332;
+$ink-mid:          #4A4F5C;
+$ink-soft:         #6E727F;
+$ink-faint:        #999482;
+
+$line:             #E5E0D2;
+$line-soft:        rgba(26, 35, 50, 0.08);
+$line-strong:      rgba(26, 35, 50, 0.18);
+
+$accent:           #B45A3C;
+$accent-deep:      #8A3F26;
+$accent-soft:      rgba(180, 90, 60, 0.10);
+$accent-faint:     rgba(180, 90, 60, 0.04);
+
+$success:          #4A8F3F;
+$success-soft:     rgba(74, 143, 63, 0.08);
+
+// ── TYPOGRAPHY ─────────────────────────────────────────────────
+$font-display:     'Heebo', system-ui, sans-serif;
+$font-body:        'Heebo', system-ui, sans-serif;
+$font-mono:        'IBM Plex Mono', ui-monospace, monospace;
+
+$weight-light:     300;
+$weight-regular:   400;
+$weight-medium:    500;
+
+$text-xs:          12px;
+$text-sm:          14px;
+$text-base:        15px;
+$text-md:          17px;
+$text-lg:          20px;
+$text-xl:          26px;
+$text-2xl:         32px;
+$text-3xl:         42px;
+$text-4xl:         56px;
+
+$leading-tight:    1.15;
+$leading-body:     1.6;
+$leading-loose:    1.75;
+
+// ── SPACING ────────────────────────────────────────────────────
+$space-0:          0;
+$space-1:          4px;
+$space-2:          8px;
+$space-3:          12px;
+$space-4:          16px;
+$space-5:          24px;
+$space-6:          32px;
+$space-7:          48px;
+$space-8:          64px;
+$space-9:          96px;
+$space-10:         128px;
+
+// ── SHAPES ─────────────────────────────────────────────────────
+$radius-sm:        4px;
+$radius-md:        6px;
+$radius-lg:        8px;
+$radius-pill:      999px;
+
+// ── BORDERS ────────────────────────────────────────────────────
+$border-hair:      1px solid $line;
+$border-subtle:    0.5px solid $line;
+
+// ── SHADOWS ────────────────────────────────────────────────────
+$shadow-none:      none;
+$shadow-hairline:  0 1px 0 rgba(26, 35, 50, 0.04);
+$shadow-card:      0 1px 2px rgba(26, 35, 50, 0.04);
+
+// ── MOTION ─────────────────────────────────────────────────────
+$dur-fast:         0.15s;
+$dur-base:         0.25s;
+$dur-slow:         0.45s;
+
+$ease-out:         cubic-bezier(0.22, 1, 0.36, 1);
+$ease-in-out:      cubic-bezier(0.65, 0, 0.35, 1);
+
+// ── BREAKPOINTS ────────────────────────────────────────────────
+$bp-sm:            480px;
+$bp-md:            768px;
+$bp-lg:            1024px;
+$bp-xl:            1280px;
+
+// ── LAYOUT WIDTHS ──────────────────────────────────────────────
+// Narrow editorial column. Workshop book reads narrow.
+$content-narrow:   620px;
+$content-base:     720px;
+$content-wide:     880px;

@@ -1,0 +1,69 @@
+// ───────────────────────────────────────────────────────────────
+// SectionShell — editorial column.
+// Section opens with a meta line + light-weight headline + lede.
+// Body flows below in the same narrow column. Bottom: prev/next.
+// ───────────────────────────────────────────────────────────────
+.section {
+  @include column-base;
+  @include flex-col;
+  gap: $space-7;
+}
+
+// ── HEAD ───────────────────────────────────────────────────────
+.head {
+  @include flex-col;
+  gap: $space-3;
+  padding-bottom: $space-5;
+  border-bottom: $border-subtle;
+}
+
+.num {
+  @include section-number;
+}
+
+.title {
+  @include headline-hero;
+}
+
+.subtitle {
+  @include lede;
+  margin-top: $space-1;
+  max-width: $content-narrow;
+}
+
+// ── BODY ───────────────────────────────────────────────────────
+.body {
+  @include flex-col;
+  gap: $space-7;
+}
+
+// ── NAV ────────────────────────────────────────────────────────
+.nav {
+  @include flex-between;
+  gap: $space-3;
+  padding-top: $space-6;
+  margin-top: $space-5;
+  border-top: $border-subtle;
+
+  @media print { display: none; }
+}
+
+.navSpacer { flex: 1; }
+
+.btnPrev {
+  @include btn-secondary;
+  @include flex-start;
+  gap: $space-2;
+
+  svg { font-size: 16px; }
+}
+
+.btnNext {
+  @include btn-primary;
+  @include flex-start;
+  gap: $space-2;
+
+  svg { font-size: 16px; }
+
+  &:disabled { background: $line-strong; border-color: $line-strong; }
+}

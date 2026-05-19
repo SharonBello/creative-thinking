@@ -1,0 +1,27 @@
+.box {
+  @include flex-col;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-7 $space-5;
+  background: $accent-faint;
+  border-radius: $radius-md;
+  text-align: center;
+}
+
+.icon {
+  @include flex-center;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: $accent-soft;
+  color: $accent;
+  font-size: 18px;
+}
+
+.text {
+  font-family: $font-body;
+  font-weight: $weight-light;
+  font-size: $text-md;
+  color: $ink-mid;
+  max-width: 320px;
+  line-height: $leading-loose;
+}

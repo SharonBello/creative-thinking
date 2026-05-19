@@ -1,0 +1,14 @@
+.shell {
+  min-height: 100vh;
+  background: $bg-canvas;
+}
+
+.main {
+  max-width: $content-base;
+  margin: 0 auto;
+  padding: $space-7 $space-5 $space-9;
+
+  @include respond-to(md) {
+    padding: $space-8 $space-6 $space-10;
+  }
+}

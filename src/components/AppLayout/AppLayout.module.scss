@@ -1,0 +1,67 @@
+.app {
+  min-height: 100vh;
+  background: $purple-mist;
+}
+
+.bar {
+  background: $purple;
+  color: $paper-white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 0 0 $purple-dark, 0 4px 12px rgba(83, 74, 183, 0.15);
+}
+
+.barInner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: $space-3 $space-5;
+  @include flex-between;
+  gap: $space-4;
+
+  @include respond-to(md) { padding: $space-4 $space-6; }
+}
+
+.brand {
+  @include flex-start;
+  gap: $space-2;
+  font-family: $font-secondary;
+  font-weight: $weight-black;
+  font-size: $text-lg;
+  color: $paper-white;
+  letter-spacing: -0.01em;
+}
+
+.brandIcon {
+  @include flex-center;
+  width: 32px; height: 32px;
+  border-radius: $radius-full;
+  background: $yellow;
+  color: $ink-black;
+  font-size: 18px;
+  box-shadow: 0 2px 0 0 $yellow-dark;
+}
+
+.brandText { line-height: 1; }
+
+.brandModule {
+  font-family: $font-mono;
+  font-size: $text-xs;
+  font-weight: $weight-medium;
+  opacity: 0.85;
+  letter-spacing: 0.04em;
+}
+
+.tagline {
+  font-family: $font-secondary;
+  font-size: $text-sm;
+  font-weight: $weight-medium;
+  color: rgba($paper-white, 0.85);
+  display: none;
+
+  @include respond-to(md) { display: inline; }
+}
+
+.main {
+  // Outlet content; ModuleShell handles its own width
+}

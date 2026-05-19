@@ -1,0 +1,84 @@
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: $space-4;
+  grid-template-columns: 1fr;
+
+  @include respond-to(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.stat {
+  @include flex-col;
+  gap: $space-2;
+  padding: $space-5 $space-5 $space-4;
+  border-radius: $radius-lg;
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+// Tint variants — each stat its own bold color
+.tint-purple {
+  background: $purple;
+  color: $paper-white;
+  box-shadow: 0 4px 0 0 $purple-dark, 0 8px 20px rgba(83, 74, 183, 0.16);
+
+  .icon { background: $purple-soft; }
+}
+
+.tint-coral {
+  background: $coral;
+  color: $paper-white;
+  box-shadow: 0 4px 0 0 $coral-dark, 0 8px 20px rgba(216, 90, 48, 0.16);
+
+  .icon { background: $coral-soft; }
+}
+
+.tint-mint {
+  background: $mint;
+  color: $paper-white;
+  box-shadow: 0 4px 0 0 $mint-dark, 0 8px 20px rgba(0, 199, 160, 0.16);
+
+  .icon { background: rgba(0, 0, 0, 0.15); }
+}
+
+// ── ICON ───────────────────────────────────────────────────────
+.icon {
+  @include flex-center;
+  width: 44px; height: 44px;
+  border-radius: $radius-full;
+  color: $paper-white;
+  font-size: 22px;
+  align-self: flex-start;
+}
+
+// ── BIG NUMBER ─────────────────────────────────────────────────
+.big {
+  font-family: $font-display;
+  font-weight: $weight-normal;
+  font-size: 76px;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: $paper-white;
+  margin-top: $space-2;
+}
+
+// ── LABEL ──────────────────────────────────────────────────────
+.label {
+  font-family: $font-secondary;
+  font-size: $text-lg;
+  font-weight: $weight-bold;
+  line-height: 1.15;
+  color: $paper-white;
+}
+
+.sub {
+  font-family: $font-body;
+  font-size: $text-sm;
+  line-height: $leading-body;
+  color: rgba(255, 255, 255, 0.85);
+}

@@ -1,0 +1,67 @@
+// ═══════════════════════════════════════════════════════════════════
+// M05 · Global Styles
+// Quiet Minimal · embedded in BinAI iframe (no own header)
+// ═══════════════════════════════════════════════════════════════════
+@use "tokens" as *;
+@use "mixins" as *;
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: $font-body;
+  font-size: $text-base;
+  font-weight: $weight-regular;
+  line-height: $leading-body;
+  color: $ink-mid;
+  background: $bg-canvas;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: $accent; text-decoration: underline; text-underline-offset: 2px; }
+a:hover { color: $accent-deep; }
+
+h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: $weight-light; color: $ink; }
+p { margin: 0; }
+ul, ol { margin: 0; padding-inline-start: 1.25em; }
+button { font-family: inherit; }
+input, textarea, select { font-family: inherit; }
+
+::selection { background: $accent-soft; color: $ink; }
+
+#root { min-height: 100vh; display: flex; flex-direction: column; }
+
+// ═══════════════════════════════════════════════════════════════
+// PRINT — Section 8 uses a React portal mounted to <body>.
+// In print we hide #root entirely and show only the portal.
+// ═══════════════════════════════════════════════════════════════
+@page { size: A4; margin: 20mm 18mm; }
+
+.m05-print-host { display: none; }
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  #root { display: none !important; }
+  .m05-print-host {
+    display: block !important;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .m05-print-field {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  a[href]::after { content: '' !important; }
+}
