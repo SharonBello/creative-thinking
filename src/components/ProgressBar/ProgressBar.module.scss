@@ -13,7 +13,9 @@
   border-bottom: $border-subtle;
   padding: $space-3 0;
 
-  @media print { display: none; }
+  @media print {
+    display: none;
+  }
 }
 
 .steps {
@@ -25,10 +27,13 @@
   align-items: center;
   gap: $space-1;
   overflow-x: auto;
+  overflow-y: hidden;
   scrollbar-width: thin;
 }
 
-.stepItem { flex-shrink: 0; }
+.stepItem {
+  flex-shrink: 0;
+}
 
 .step {
   @include focus-ring;
@@ -59,10 +64,14 @@
   color: $ink-faint;
   letter-spacing: 0.04em;
 
-  svg { font-size: 12px; }
+  svg {
+    font-size: 12px;
+  }
 }
 
-.stepLabel { line-height: 1; }
+.stepLabel {
+  line-height: 1;
+}
 
 // ── STATES ─────────────────────────────────────────────────────
 .stepCurrent {
@@ -70,10 +79,12 @@
   font-weight: $weight-medium;
   position: relative;
 
-  .stepNum { color: $accent; }
+  .stepNum {
+    color: $accent;
+  }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     inset-inline: $space-3;
     bottom: -$space-3;
@@ -87,7 +98,9 @@
 
   .stepNum {
     color: $success;
-    svg { font-size: 12px; }
+    svg {
+      font-size: 12px;
+    }
   }
 }
 
